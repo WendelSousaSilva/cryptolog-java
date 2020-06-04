@@ -17,11 +17,14 @@ import br.com.pentagono.estoque.controllers.HomeController;
 import br.com.pentagono.estoque.converters.StringToFornecedorConverter;
 import br.com.pentagono.estoque.converters.StringToProdutoConverter;
 import br.com.pentagono.estoque.daos.ProdutoDAO;
+import br.com.pentagono.estoque.filters.JwtRequestFilter;
 import br.com.pentagono.estoque.utils.ArquivoUtils;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses = { HomeController.class, ProdutoDAO.class, StringToFornecedorConverter.class, ArquivoUtils.class })
+@ComponentScan(basePackageClasses = { HomeController.class, ProdutoDAO.class, StringToFornecedorConverter.class,
+		ArquivoUtils.class, AppWebConfiguration.class, JwtRequestFilter.class })
 public class AppWebConfiguration implements WebMvcConfigurer {
+
 
 	@Autowired
 	private StringToFornecedorConverter stringToFornecedorConverter;
