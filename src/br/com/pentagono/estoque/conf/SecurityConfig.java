@@ -57,6 +57,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			
 			http.antMatcher("/api/**").authorizeRequests()
 				.antMatchers("/api/fornecedores/**").permitAll()
+				.antMatchers("/api/carrinho/**").permitAll()
+				.antMatchers("/api/produtos/**").permitAll()
 				.antMatchers("/api/usuarios/login").permitAll()
 				.anyRequest().authenticated()
 				.and().exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
